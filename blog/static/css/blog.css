@@ -1,0 +1,41 @@
+/* General commands explanation:
+padding-left: space to left window border
+*/
+
+/*------------------------ Classes -----------------------------*/
+
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+/*------------------------ Commands -----------------------------*/
+/*Header h1 with label a1 settings*/
+h1 a1{
+	color: #800000;
+	text-shadow: 3px 2px #D3D3D3;
+	font-weight: bold;
+	font-family: 'Lobster';
+	font-size: 40px;
+	padding-left: 10px;
+}
+
+/*Header h3 with label a3 settings*/
+h3 a3{
+	color: #000000;
+	font-weight: bold;
+	text-decoration: underline;
+	font-family: Georgia, serif;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+/*Paragraph p settings*/
+p {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	padding-left: 10px;
+}

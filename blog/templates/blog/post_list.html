@@ -1,23 +1,35 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<!-- Damit werden Umlaute auf der Website möglich. Diese Datei muss dabei als UTF-8 ohne BOM kodiert sein. -->
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<!-- Import of Lobster font from google -->
+		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<!-- Including css stylesheets from inet -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- Personal stylesheet -->
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		
 		<title>Python Website</title>
 	</head>
 	
 	<body>
+		<!--img src="stockyards.jpg" alt="Stockyards, US Texas - 2014" width="800" height="128"-->
+		<img src="{% static 'images/stockyards.jpg' %}" alt="Stockyards, US Texas - 2014" width="100%" height="auto"/>
+		
+		<h1><a1 href=""> Willkommen auf Bella's Blog </a1></h1>
 		<div>
-		<h1>Willkommen auf Bella's Blog </h1>
 		<p>Eines vorweg: ich bin echt mies darin regelmäßig meine Nachrichten - in welcher Form auch immer - zu checken. Dasselbe wird wohl für diesen Blog bezüglich der Aktualität gelten, aber ich gebe mein Möglichstes. :)</p>
 		</div>
 		
 		<div>
-		<h3><a href="">Über mich:</a></h3>
+		<h3><a3 href="">Über mich:</a></h3>
 		<p> Ich bin eine 27-jährige (Juni 2018) Berlinerin - born and raised, die sich für absolut alles begeistern kann. Zumindest einmal. Wenn es mein Interesse nicht geweckt hat, dann ist für eine lange Zeit von meinem Radar verschwunden. Die Leidenschaft für <strong>Fotografie</strong> hat mich vor über 10 Jahren mit dem Erwerb meiner ersten Spiegelreflexkamera gepackt und seitdem nicht mehr losgelassen. Kennt ihr das: euch läuft ein Motiv über den Weg und alles andere wird einfach nebensächlich, außer dieses eine perfekte Bild zu schießen - egal wie lange man auch in der Kälte, bei sturmartigen Böen oder in der brütenden Hitze stehen muss für das gewisse Etwas, sei es das Licht oder die kleine Schäfchenwolke?</p>
 		</div>
 		
 		<div>
-		<h3><a href="">Random infos:</a></h3>
+		<h3><a3 href="">Random Infos:</a></h3>
 		<!-- Schleife zum Anzeigen einer Liste -->
 		{% for post in posts %}
 		<div>
