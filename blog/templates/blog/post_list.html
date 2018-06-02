@@ -3,6 +3,8 @@
 	<head>
 		<!-- Damit werden Umlaute auf der Website möglich. Diese Datei muss dabei als UTF-8 ohne BOM kodiert sein. -->
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<!-- Add icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- Import of Lobster font from google -->
 		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 		<!-- Including css stylesheets from inet -->
@@ -15,8 +17,15 @@
 	</head>
 	
 	<body>
-		<!--img src="stockyards.jpg" alt="Stockyards, US Texas - 2014" width="800" height="128"-->
+		<!-- Paste image -->
 		<img src="{% static 'images/stockyards.jpg' %}" alt="Stockyards, US Texas - 2014" width="100%" height="auto"/>
+		<!-- Navigation bar -->
+		<div class="icon-bar">
+		<topbar class="active" href="#"><i class="fa fa-home"></i></topbar> 
+		<topbar href="#"><i class="fa fa-search"></i></topbar> 
+		<topbar href="#"><i class="fa fa-image"></i></topbar> 
+		<topbar href="#"><i class="fa fa-info"></i></topbar>
+		</div>
 		
 		<h1><a1 href=""> Willkommen auf Bella's Blog </a1></h1>
 		<div>
@@ -30,15 +39,18 @@
 		
 		<div>
 		<h3><a3 href="">Random Infos:</a></h3>
-		<!-- Schleife zum Anzeigen einer Liste -->
-		{% for post in posts %}
-		<div>
-			<p><strong>{{ post.title }}</strong></p>
-			<p>published: {{ post.published_date }}</p>
-			<p>{{ post.text|linebreaksbr }}</p>
-			<hr>
 		</div>
-		{% endfor %}
-		</div>
+		
+		{% block content %}
+			<!-- Schleife zum Anzeigen einer Liste -->
+			{% for post in posts %}
+				<div>
+				<p><strong>{{ post.title }}</strong></p>
+				<p>published: {{ post.published_date }}</p>
+				<p>{{ post.text|linebreaksbr }}</p>
+				<hr>
+				</div>
+			{% endfor %}
+        {% endblock %}
 	</body>
 </html>
